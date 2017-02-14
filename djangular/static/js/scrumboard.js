@@ -4,7 +4,7 @@
 
 (function () {
     'use strict';
-    angular.module('scrumboard.demo', [])
+    angular.module('scrumboard.demo', ['ngRoute'])
         .controller('ScrumboardController', ['$scope', '$http', ScrumboardController]);
     function ScrumboardController($scope, $http) {
         $scope.add = function (list, title) {
