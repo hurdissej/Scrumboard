@@ -1,12 +1,34 @@
+<div style="float: right">
+   <button ng-click="logout()"> Logout </button>
+</div>
 <div class="list" ng-repeat="list in data">
-    <h1> Let's Go!</h1>
+    <button style="float: right" ng-click="filter = !filter"> Show Filters </button>
     <h3>{{ list.name }}</h3>
+    <div class="list-sort" ng-show="filter">
+        <div>
+            <label> Search: </label>
+            <input type="text" ng-model="filterBy">
+        </div>
+        <div>
+        <tr>
+            <td><label> Sort: </label></td>
+                <select ng-model="sortBy">
+                    <option value="title" >Title</option>
+                    <option value="business_value">Business Value</option>
+                    <option value="story_points" >Story Points</option>
+                </select>
+        </tr>
+        </div>
+        <input type="checkbox" ng-model="reverse">
+        <label>Reverse </label>
+    </div>
     <ul>
-        <li ng-repeat="card in list.cards">
+        <li ng-repeat="card in list.cards | filter:filterBy| orderBy:sortBy:reverse">
             <scrumboard-card> </scrumboard-card> </li>
     </ul>
     <div class="flex">
         <input type="text" ng-model="new_title"/>
         <button ng-click="add(list, new_title)">+</button>
     </div>
+    <!-- add logout button that calls logout() -->
 </div>
