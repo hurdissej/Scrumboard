@@ -28,8 +28,8 @@
         $scope.data = [];
         $scope.logout = Login.logout;
         $scope.sortBy = 'business_value';
-        $scope.reverse = True;
-        $scope.filter = False
+        $scope.reverse = true;
+        $scope.filter = false;
         $http.get('/scrumboard/lists/').then(function(response) {
             $scope.data = response.data;
         });
