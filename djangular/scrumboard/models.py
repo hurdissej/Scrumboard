@@ -1,8 +1,16 @@
 from django.db import models
 
 # Create your models here.
+class Board(models.Model):
+    name = models.CharField(max_length=50)
+    description = models.CharField(max_length=300)
+
+    def __str__(self):
+        return "Board: {}".format(self.name)
+
 class List(models.Model):
     name = models.CharField(max_length=50)
+    board = models.ForeignKey(Board, related_name="lists")
 
     def __str__(self):
         return "List: {}".format(self.name)

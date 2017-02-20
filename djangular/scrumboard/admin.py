@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import List, Card
+from .models import List, Card, Board
 # Register your models here.
 admin.site.register(List)
 admin.site.register(Card)
+admin.site.register(Board)

@@ -16,6 +16,10 @@
                 templateUrl: '/static/html/scrumboard.html',
                 controller: 'ScrumboardController'
             })
+            .when('/overview',{
+                templateUrl: '/static/html/overview.html',
+                controller: 'ScrumboardController'
+            })
             .when('/login', {
                 templateUrl: '/static/html/login.html',
                 controller: 'LoginController'

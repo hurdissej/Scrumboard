@@ -13,8 +13,7 @@
         this.logout = logout;
         this.redirectIfNotLoggedIn = redirectIfNotLoggedIn;
         this.isLoggedIn = isLoggedIn;
-
-        /** Write four above functions **/
+        this.boardredirect = boardredirect;
 
         function login(credentials) {
             return $http.post('/auth_api/login/', credentials)
@@ -32,6 +31,12 @@
             $http.get('/auth_api/logout/').then(function () {
                 $location.url('/login');
             });
+        }
+
+        function boardredirect() {
+            if (isLoggedIn()) {
+                $location.url('/overview');
+            }
         }
 
         function redirectIfNotLoggedIn() {

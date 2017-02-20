@@ -40,6 +40,7 @@
                     debounce: 500
                 };
 
+
                 $scope.move = function () {
                     if ($scope.destList === undefined) {
                         return;

@@ -1,6 +1,6 @@
 from rest_framework.viewsets import ModelViewSet
-from .serializers import ListSerializer, CardSerializer
-from .models import List, Card
+from .serializers import ListSerializer, CardSerializer, BoardSerializer
+from .models import List, Card, Board
 from rest_framework import permissions
 
 class ListViewSet(ModelViewSet):
@@ -11,4 +11,9 @@ class ListViewSet(ModelViewSet):
 class CardViewSet(ModelViewSet):
     queryset = Card.objects.all()
     serializer_class = CardSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+
+class BoardViewSet(ModelViewSet):
+    queryset = Board.objects.all()
+    serializer_class = BoardSerializer
     permission_classes = (permissions.IsAuthenticated,)

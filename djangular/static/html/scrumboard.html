@@ -1,7 +1,14 @@
 <div style="float: right">
    <button ng-click="logout()"> Logout </button>
 </div>
+
+<div style="float: right">
+   <button ng-click="boardredirect()"> boards </button>
+</div>
+
+
 <div class="list" ng-repeat="list in data">
+
     <button style="float: right" ng-click="filter = !filter"> Show Filters </button>
     <h3>{{ list.name }}</h3>
     <div class="list-sort" ng-show="filter">
@@ -23,7 +30,7 @@
         <label>Reverse </label>
     </div>
     <ul>
-        <li ng-repeat="card in list.cards | filter:filterBy| orderBy:sortBy:reverse">
+        <li ng-repeat="card in list.cards | filter:filterBy">
             <scrumboard-card> </scrumboard-card> </li>
     </ul>
     <div class="flex">

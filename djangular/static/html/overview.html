@@ -1,0 +1,14 @@
+<div class="list" ng-repeat="board in boards">
+        <h3> Board: {{ board.name }}</h3>
+        <div  class="card" ng-repeat="list in board.lists">
+            <h4> {{ list.name }}  </h4>
+            <div>
+            <h4> Cards: </h4>
+            <ul>
+                <li ng-repeat="card in list.cards">
+                    <span class="description"> {{ card.title }} </span>
+                </li>
+            </ul>
+            </div>
+        </div>
+</div>
