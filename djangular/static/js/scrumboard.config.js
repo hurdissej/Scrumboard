@@ -10,13 +10,8 @@
         .run(['$http', run]);
 
     function config($routeProvider) {
-
         $routeProvider
             .when('/', {
-                templateUrl: '/static/html/scrumboard.html',
-                controller: 'ScrumboardController'
-            })
-            .when('/overview',{
                 templateUrl: '/static/html/overview.html',
                 controller: 'ScrumboardController'
             })
@@ -24,9 +19,12 @@
                 templateUrl: '/static/html/login.html',
                 controller: 'LoginController'
             })
-            .otherwise('/');
+            .when('/board/:boardID', {
+                templateUrl: '/static/html/scrumboard.html',
+                controller: 'ScrumboardController'
+            })
+            .otherwise('/')
     }
-
     function run($http) {
         $http.defaults.xsrfHeaderName = 'X-CSRFToken';
         $http.defaults.xsrfCookieName = 'csrftoken';

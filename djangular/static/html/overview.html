@@ -1,5 +1,6 @@
 <div class="list" ng-repeat="board in boards">
         <h3> Board: {{ board.name }}</h3>
+        <a ng-href="#!/board/{{board.id}}"> Have a look! </a>
         <div  class="card" ng-repeat="list in board.lists">
             <h4> {{ list.name }}  </h4>
             <div>

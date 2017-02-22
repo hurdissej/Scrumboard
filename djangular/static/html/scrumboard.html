@@ -2,14 +2,19 @@
    <button ng-click="logout()"> Logout </button>
 </div>
 
+<div>
+    <h2> Board: {{ model.id }} </h2>
+</div>
+
 <div style="float: right">
    <button ng-click="boardredirect()"> boards </button>
 </div>
 
 
-<div class="list" ng-repeat="list in data">
+<div class="list" ng-repeat="list in data| filter: {board: model.id}">
 
     <button style="float: right" ng-click="filter = !filter"> Show Filters </button>
+
     <h3>{{ list.name }}</h3>
     <div class="list-sort" ng-show="filter">
         <div>

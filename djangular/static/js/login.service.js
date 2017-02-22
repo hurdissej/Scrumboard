@@ -35,7 +35,7 @@
 
         function boardredirect() {
             if (isLoggedIn()) {
-                $location.url('/overview');
+                $location.url('/');
             }
         }
 
