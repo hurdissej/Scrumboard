@@ -23,6 +23,10 @@
                 templateUrl: '/static/html/scrumboard.html',
                 controller: 'ScrumboardController'
             })
+            .when('/menu', {
+                templateUrl: '/static/html/menu.html',
+                controller: 'ScrumboardController'
+            })
             .otherwise('/')
     }
     function run($http) {

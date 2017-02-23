@@ -12,9 +12,7 @@
 
 
 <div class="list" ng-repeat="list in data| filter: {board: model.id}">
-
     <button style="float: right" ng-click="filter = !filter"> Show Filters </button>
-
     <h3>{{ list.name }}</h3>
     <div class="list-sort" ng-show="filter">
         <div>
